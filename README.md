@@ -39,12 +39,11 @@ Una vez dicho todo esto, podemos empezar.
         - [Big Data](#big-data)
         - [Inteligencia Artificial (IA)](#inteligencia-artificial-ia)
         - [DevOps](#devops)
-- [Practica 1](#practica-1---página-wordpress-con-azure-app-service)
-    - [Creación de la página WordPress](#creación-de-la-página-wordpress)
-    - [Configuración y vista predeterminada de WordPress](#configuración-y-vista-predeterminada-de-wordpress)
-    - [Explicación de componentes del grupo de recursos](#explicación-de-componentes-del-grupo-de-recursos)
-    - [Rediseño y acabados finales de la página WordPress](#rediseño-y-acabados-finales-de-la-página-wordpress)
-- [Resultado final](#resultado-final)
+- [Practica 2](#practica-2---entorno-de-ejecución-azure-machine-learning)
+    - [Creación del entorno](#creación-del-entorno)
+    - [Primer programa en Python](#primer-programa-en-python)
+    - [Enlace con Visual Code Studio](#enlace-con-visual-code-studio)
+    - [Programa de codificación Binaria](#programa-de-codificación-binaria-hecho-en-azure-ml-en-la-nube)
 
 -------
 
@@ -232,44 +231,100 @@ Es un entorno virtual que nos sirve para ejecutar codigo (normalmente Python), p
 
 
 ### 〔Enlace con Visual Code Studio〕
-En este tema, explicaré 
+En este tema, explicaré como realizar una edición de código usando un entorno de desarrollo **local**, pero logrando modificar el código de **la nube** de forma sincronizada. Para ello usaremos **Visual Studio Code**
 
-1. 
+1. Primero, es necesario ya tener instalado el Visual Studio Code. Asumiendo que ya contamos con él, damos clic en el botón: **Editar con VS Code**. Y aceptamos la ventana emergente.
 ![](https://i.imgur.com/zazGuQ2.png)
 
-2. 
+2. Y **confirmamos** que lo abriremos con la aplicación de Visual Studio.
 ![](https://i.imgur.com/jAyefPH.png)
 
-3. 
+3. Una vez abierta, nos saldrán varios mensajes emergentes que nos indicarán que es necesario instalar algunos complementos para que funcione correctamente la conexión entre entornos local y nube.
 ![](https://i.imgur.com/TSxgI2d.png)
-
-
-
 ![](https://i.imgur.com/16oItGa.png)
+> Aceptamos todo
 
-
+4. Aquí se nos pedirá loguearnos de nueva cuenta con nuestra cuenta de Azure. Esto es porque VS Code necesita saber a donde hará la conexión, y para ello necesita las credenciales del entorno ML.
 ![](https://i.imgur.com/6wUMrum.png)
-
-
 ![](https://i.imgur.com/rrq19Ah.png)
 
+5. Y aceptamos que confiamos en estos medios.
 ![](https://i.imgur.com/wwJP2fk.png)
 
+6. Podemos observar que en VS tenemos exactamente el mismo código que creamos en la nube, pero ahora de forma local. Inclusive nos muestra el mismo resultado de la ejecución.
 ![](https://i.imgur.com/HeqkPgP.png)
 
-
+7. Ahora, yo añadí una nueva linea de código; un print("¿como están?"), el cual quiero que se ejecute tanto aquí en el VSCode, como en Azure ML. Al darle a ejecutar, me manda directamente a la barra de busquedas, con una busqueda predeterminada, indicando que hace falta instalar un complemento extra a VSCode que nos permitirá habilitar la conexión con ML y poder mandar los cambios a la nube.
 ![](https://i.imgur.com/rZOzfGn.png)
 
+8. Dicho complemento se llama Jupyter. Lo instalamos como se nos pide.
 ![](https://i.imgur.com/VTWEewM.png)
 
+9. Podemos percatarnos que se nos habilitó un nuevo menú de opción arriba de las lineas de código, dichas opciones nos servirán para ejecutar el código tanto local como en la nube.
 ![](https://i.imgur.com/QTNBqyO.png)
+
+10. Al darle en ejecutar todo, nos dice que podemos ejecutar Python 3.8 con un destino raro; dicho destino, no es sino que la nube propia, nuestro recurso de Azure ML que ya está configurado para empezar a recibir códigos de entornos fuera de si misma.
 ![](https://i.imgur.com/6JNeJn4.png)
 
+11. y como se puede apreciar, aquí ya se ejecutó tanto la primera linea que se hizo en la nube, como la segunda linea que hice aquí en local.
 ![](https://i.imgur.com/EDecXsE.png)
 
+12. Como bien mencioné antes, era necesario activar la Autentificación del Azure ML. por tanto, ya quedó listo para recibir código externo.
 ![](https://i.imgur.com/0YS4CTO.png)
+
+13. Ahora solo es cuestión de cerrar el Notebook, y volverlo a abrir, y podemos ver que se ha actualizado nuestro código con los datos creados en el entorno local. Y posteriormente ejecutado en la nube de manera satisfactoria.
 ![](https://i.imgur.com/BgXp17m.png)
 
 
 ### 〔Programa de codificación Binaria hecho en Azure ML en la NUBE〕
-Para finalizar con la práctica, explicaré paso a paso 
+Para finalizar con la práctica, explicaré este pequeño programa de Python que he implementado en la ML, usando el mismo Notebook.
+
+Convertir un número decimal a binario es muy sencillo: basta con realizar divisiones sucesivas entre 2 y escribir los residuos obtenidos en cada división en orden inverso al que han sido obtenidos.
+
+Por ejemplo el número decimal **23519**:
+
+23519 / 2 = 11759 Residuo: **1**
+11759 / 2 = 5879 Residuo: **1**
+5879 / 2 = 2939 Residuo: **1**
+2939 / 2 = 1469 Residuo: **1**
+1469 / 2 = 734 Residuo: **1**
+734 / 2 = 367 Residuo **0**
+367 / 2 = 183 Residuo: **1**
+183 / 2 = 91 Residuo: **1**
+91 / 2 = 45 Residuo: **1**
+45 / 2 = 22 Residuo: **1**
+22/ 2 = 11  Residuo: **0**
+11 / 2 = 5  Residuo: **1**
+5 / 2 = 2 Residuo: **1**
+2 / 2 = 1  Residuo: **0**
+1 / 2 = 0  Residuo: **1**
+Acomodando los residuos en orden inverso el número decimal **23519** sería el **101101111011111** binario.
+
+Aplicando ese razonamiento.
+1. Tenemos nuestra función llamada **Binario** con el atributo **decimal**
+2. **binario** es igual a "", esto es porque queremos que dicha variable esté vacía hasta que el usuario sea capaz de ingresarle algún **valor/número** sobre el cual se le aplicará la **codificación** Binaria.
+3. Seguido de eso, se crea un While que se ejecuta mientras que el residuo de **decimal** dividido entre 2 sea diferente de 0.
+4. En la siguiente linea, se convierte a **String** la operación de **decimal** modulo de 2, y sumado al propio **binario**
+5. Ahora decimal es igual a dividir decimal entre 2.
+6. Se retorna de forma String a decimal y se le suma binario.
+7. Para finalizar, se crea la variable numero que tiene un input el cual recibe el número de usuario. Después, se imprime el resultado de toda la operación.
+![](https://i.imgur.com/7GyUSsD.png)
+> Como podemos ver, es exactamente el mismo resultado que vimos arriba.
+
+Ahora, procederé a dejar unos cuantos ejemplos más.
+
+Número **556**
+![](https://i.imgur.com/mKz0zRv.png)
+![](https://i.imgur.com/F8EpYW2.png)
+
+Número **37**
+![](https://i.imgur.com/Qs8lOUb.png)
+![](https://i.imgur.com/Mh4TPys.png)
+
+Número **1163**
+![](https://i.imgur.com/1LMUrfT.png)
+![](https://i.imgur.com/twsXBVs.png)
+
+Número **2606**
+![](https://i.imgur.com/6DUEVXa.png)
+![](https://i.imgur.com/hS1ZziO.png)
