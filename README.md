@@ -283,21 +283,22 @@ Convertir un número decimal a binario es muy sencillo: basta con realizar divis
 
 Por ejemplo el número decimal **23519**:
 
-23519 / 2 = 11759 Residuo: **1**
-11759 / 2 = 5879 Residuo: **1**
-5879 / 2 = 2939 Residuo: **1**
-2939 / 2 = 1469 Residuo: **1**
-1469 / 2 = 734 Residuo: **1**
-734 / 2 = 367 Residuo **0**
-367 / 2 = 183 Residuo: **1**
-183 / 2 = 91 Residuo: **1**
-91 / 2 = 45 Residuo: **1**
-45 / 2 = 22 Residuo: **1**
-22/ 2 = 11  Residuo: **0**
-11 / 2 = 5  Residuo: **1**
-5 / 2 = 2 Residuo: **1**
-2 / 2 = 1  Residuo: **0**
-1 / 2 = 0  Residuo: **1**
+- 23519 / 2 = 11759 Residuo: **1**
+- 11759 / 2 = 5879 Residuo: **1**
+- 5879 / 2 = 2939 Residuo: **1**
+- 2939 / 2 = 1469 Residuo: **1**
+- 1469 / 2 = 734 Residuo: **1**
+- 734 / 2 = 367 Residuo **0**
+- 367 / 2 = 183 Residuo: **1**
+- 183 / 2 = 91 Residuo: **1**
+- 91 / 2 = 45 Residuo: **1**
+- 45 / 2 = 22 Residuo: **1**
+- 22/ 2 = 11  Residuo: **0**
+- 11 / 2 = 5  Residuo: **1**
+- 5 / 2 = 2 Residuo: **1**
+- 2 / 2 = 1  Residuo: **0**
+- 1 / 2 = 0  Residuo: **1**
+
 Acomodando los residuos en orden inverso el número decimal **23519** sería el **101101111011111** binario.
 
 Aplicando ese razonamiento.
@@ -313,18 +314,22 @@ Aplicando ese razonamiento.
 
 Ahora, procederé a dejar unos cuantos ejemplos más.
 
-Número **556**
+- Número **556**
+
 ![](https://i.imgur.com/mKz0zRv.png)
 ![](https://i.imgur.com/F8EpYW2.png)
 
-Número **37**
+- Número **37**
+
 ![](https://i.imgur.com/Qs8lOUb.png)
 ![](https://i.imgur.com/Mh4TPys.png)
 
-Número **1163**
+- Número **1163**
+
 ![](https://i.imgur.com/1LMUrfT.png)
 ![](https://i.imgur.com/twsXBVs.png)
 
-Número **2606**
+- Número **2606**
+
 ![](https://i.imgur.com/6DUEVXa.png)
 ![](https://i.imgur.com/hS1ZziO.png)
